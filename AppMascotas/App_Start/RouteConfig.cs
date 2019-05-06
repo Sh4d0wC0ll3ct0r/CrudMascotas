@@ -14,9 +14,9 @@ namespace AppMascotas
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
+                name: "Mascotas",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Mascotas", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<AppMascotas.Models.Mascota>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(x => x.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.Raza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.ColorPelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.Dueño)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.Edad)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var masc in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(x => masc.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(x => masc.Raza)
+        </td>
+        <td>
+            @Html.DisplayFor(x => masc.ColorPelo)
+        </td>
+        <td>
+            @Html.DisplayFor(x => masc.Dueño)
+        </td>
+        <td>
+            @Html.DisplayFor(x => masc.Edad)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = masc.MascotaId }) |
+            @Html.ActionLink("Detail", "Detail", new { id = masc.MascotaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = masc.MascotaId })
+        </td>
+    </tr>
+    }
+</table> 
